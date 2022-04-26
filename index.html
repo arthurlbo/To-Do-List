@@ -14,26 +14,44 @@
         <title>Vite App</title>
     </head>
     <body>
-        <main>
-            <h1 class="titulo">TAREFAS</h1>
-            <div class="progress">
-                <div
-                    class="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar"
-                    aria-valuenow="0"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    style="width:16%"
-                ></div>
-            </div>
+        <main class="vh-100">
+            <div class="container">
+                <h1 class="titulo text-center " >TAREFAS</h1>
 
-            <div class="barra">
-                <input type="text" name="text" placeholder="Nova tarefa ?" />
-            </div>
+                <div class="progress">
+                    <div
+                        class="progress-bar progress-bar-striped progress-bar-animated"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 100%"
+                    >
+                        100%
+                    </div>
+                </div>
 
-            <p class="paragrafo">
-                Realizado por arthur e adam para aprendizado
-            </p>
+                <div class="container mg-4">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="input"
+                        placeholder="Nova tarefa ?"
+                    />
+                    <button
+                        type="button"
+                        onclick="lerInput()"
+                        class="btn btn-primary"
+                    >
+                        +
+                    </button>
+                </div>
+                <div id="listas"></div>
+
+                <p class="paragrafo">
+                    Realizado por arthur e adam para aprendizado
+                </p>
+            </div>
         </main>
         <script type="module" src="/main.js"></script>
         <script
