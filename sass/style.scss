@@ -1,12 +1,10 @@
+
 body {
     font-family: "JetBrainsMono", sans-serif;
-    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+    background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
     background-size: cover;
-
-}
-
-main{
-    display: flex;
+    background-repeat: repeat-x;
+    min-height: 100vh;
 }
 
 h1,h2{
@@ -14,18 +12,24 @@ h1,h2{
 }
 
 .titulo{
-    padding-top: 100px; 
+    margin-top: 50px;
 }
 
 .container{
     padding-top: 50px;
-    max-height: 25px;
 }
-
 .progress{
-    border: 0; 
-    border-radius: 25px;  
+    margin-bottom: 40px;
+    max-width: 1117px;
+}
+.progress-bar{
+      
     display: flex;
     flex-direction: row;
+    width: 1100px;
+}
+.rodape{
+    text-align: center;
+    margin-bottom: 0;
 }
 
