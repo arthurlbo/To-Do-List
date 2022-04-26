@@ -1,31 +1,47 @@
 body {
-    font-family: "JetBrainsMono", sans-serif;
-    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
-    background-size: cover;
-
+    height: 100%;
+    background: linear-gradient(68.15deg, #2f2325 16.62%, #8e5d52 85.61%);
+    
 }
-
-main{
+header {
+    min-height: 10vh;
+}
+main {
+    min-height: 70vh;
+}
+footer {
+    min-height: 10vh;
+}
+.cabecalho {
     display: flex;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-left: 50px;
+    height: 30px;
+    
+}
+.adicionar-tarefa {
+    background: #000;
+    text-decoration-color: #fff;
+    font-size: large;
+    text-align: center;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 500px;
+}
+.botao {
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 30px;
+    width: 25px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
-h1,h2{
+
+
+h2 {
     color: #fff;
 }
-
-.titulo{
-    padding-top: 100px; 
-}
-
-.container{
-    padding-top: 50px;
-    max-height: 25px;
-}
-
-.progress{
-    border: 0; 
-    border-radius: 25px;  
-    display: flex;
-    flex-direction: row;
-}
-
