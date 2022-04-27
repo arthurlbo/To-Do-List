@@ -57,22 +57,31 @@ function renderizarTarefas() {
 }
 
 function concluirTarefa(id) {
-    console.log("id tarefa atual", id);
-    console.log("tarefas antes for each", tarefas);
     for (let i = 0; i < tarefas.length; i++) {
         if (tarefas[i].id == id) {
             tarefas[i].done = !tarefas[i].done;
     
         }
     }
-
-    console.log("tarefas dps for each", tarefas);
+   let checar = tarefas.done
     salvarTarefas();
     renderizarTarefas();
 }
 
+function checarProgresso(tarefas){
+    for (let i = 0; i < tarefas.length; i++) {
+    return tarefas[i] = true;
+    }
+}
+
+function barraProgresso(){
+    let meuProgresso= tarefas.filter(checarProgresso);
+    console.log('tarefas completas', meuProgresso);
+}
+
 carregarTarefas();
 renderizarTarefas();
+barraProgresso();
 
 document.cadastrarTarefa = cadastrarTarefa;
 document.deletarTarefa = deletarTarefa;
