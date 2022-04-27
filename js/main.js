@@ -1,4 +1,5 @@
 import botao from "./components/botao.js";
+import _, { forEach } from "lodash";
 let tarefas = [];
 
 function carregarTarefas() {
@@ -8,17 +9,26 @@ function carregarTarefas() {
         tarefas = [];
     }
 }
+//https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
+function uuidv4() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+        (
+            c ^
+            (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+        ).toString(16)
+    );
+}
 
 function salvarTarefas() {
     localStorage.setItem("tasks", JSON.stringify(tarefas));
 }
 
 function deletarTarefa(id) {
-    const index = numeros.indexOf(tarefas.id)
-    if (index > -1) {
-        tarefas.splice(index, 1);
-    }
-    
+    tarefas = _.remove(tarefas, (t) => {
+        return t.id != id;
+    });
+    salvarTarefas();
+    renderizarTarefas();
 }
 
 function cadastrarTarefa() {
@@ -28,7 +38,7 @@ function cadastrarTarefa() {
         const texto = input.value;
         input.value = "";
         tarefas.push({
-            id: tarefas.length,
+            id: uuidv4(),
             txt: texto,
             done: false,
         });
@@ -45,7 +55,25 @@ function renderizarTarefas() {
     });
     document.getElementById("tarefas").innerHTML = html;
 }
+
+function concluirTarefa(id) {
+    console.log("id tarefa atual", id);
+    console.log("tarefas antes for each", tarefas);
+    for (let i = 0; i < tarefas.length; i++) {
+        if (tarefas[i].id == id) {
+            tarefas[i].done = !tarefas[i].done;
+    
+        }
+    }
+
+    console.log("tarefas dps for each", tarefas);
+    salvarTarefas();
+    renderizarTarefas();
+}
+
 carregarTarefas();
 renderizarTarefas();
 
 document.cadastrarTarefa = cadastrarTarefa;
+document.deletarTarefa = deletarTarefa;
+document.concluirTarefa = concluirTarefa;
