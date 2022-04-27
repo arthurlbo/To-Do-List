@@ -14,7 +14,10 @@ function salvarTarefas() {
 }
 
 function deletarTarefa(id) {
-
+    const index = numeros.indexOf(tarefas.id)
+    if (index > -1) {
+        tarefas.splice(index, 1);
+    }
     
 }
 
