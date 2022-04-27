@@ -45,10 +45,12 @@
                         class="btn btn-outline-secondary"
                         type="button"
                         id="buttonadd"
+                        onclick="cadastrarTarefa()"
                     >
                         <!--CRIA O BOTAO DE ADICIONAR TAREFA-->
                         Add
                     </button>
+
                     <div class="dropdown">
                         <button
                             class="btn btn-secondary dropdown-toggle"
@@ -80,9 +82,13 @@
                     </div>
                 </div>
                 <!--MENU DE NAVEGAÇÃO ENTRE TAREFAS JA CONCLUIDAS-->
-                <div id="tarefas" class="d-flex align-content-stretch flex-wrap gap-3"></div>
+                <div
+                    id="tarefas"
+                    class="d-flex align-content-stretch flex-wrap gap-3"
+                ></div>
             </div>
         </main>
     </body>
     <script type="module" src="js/main.js"></script>
+    
 </html>

@@ -11,6 +11,7 @@ export default function (tarefa) {
         <button
             type="button"
             class="btn-close btn-close-white me-2 m-auto"
+            onclick="ola()"
         ></button>
     </div>
 </div>
