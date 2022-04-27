@@ -14,7 +14,7 @@
         <title>Vite App</title>
     </head>
     <body>
-        <main class="vh-100">
+        <main>
             <div class="container">
                 <h1 class="titulo text-center">TAREFAS</h1>
 
@@ -26,24 +26,25 @@
                         aria-valuenow="70"
                         aria-valuemin="0"
                         aria-valuemax="100"
-                    >
+                    ><!--BARRA DE PROGRESSO DE TAREFAS REALIZADAS-->
                         25%
                     </div>
                 </div>
 
                 <div class="input-group">
                     <input
+                        id="gettask"
                         type="text"
                         class="form-control"
                         placeholder="Adicione uma tarefa"
                         aria-label="Recipient's username"
                         aria-describedby="button-addon2"
-                    />
-                    <button
+                    /><!--CRIA O FORMULARIO PARA O USUARIO ESCREVER A TAREFA-->
+                    <button 
                         class="btn btn-outline-secondary"
                         type="button"
-                        id="button-addon2"
-                    >
+                        id="buttonadd"
+                    > <!--CRIA O BOTAO DE ADICIONAR TAREFA-->
                         Add
                     </button>
                     <div class="dropdown">
@@ -75,9 +76,10 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div><!--MENU DE NAVEGAÇÃO ENTRE TAREFAS JA CONCLUIDAS-->
 
                 <div
+                    id="currentlist"
                     class="toast align-items-center text-white bg-primary border-0 d-flex flex-wrap p-4 mt-4 btn"
                     role="checkbox"
                     aria-live="assertive"

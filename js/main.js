@@ -1,16 +1,17 @@
-const tarefa = [];
+//seleção de DOM
+const tarefa = document.querySelector('#gettask')
 
-function addtarefa(){
-    const text = document.getElementById('input')
-    if (inptarefa.value !== ''){
-        const novatarefa = input.value;
-        input.value = '';
-        tarefa.push({
-            id:tarefa.length,
-            name:text,
-            done: false,
-        });
-        mostralistas();
-    }
+const button = document.querySelector("#buttonadd");
+
+const current = document.querySelector("#currentlist")
+
+console.log(tarefa)
+
+//Escutando eventos
+
+button.addEventListener('click', addTodo)
+
+//funçoes
+function addTodo(event){
+    console.log('clicou')
 }
-
