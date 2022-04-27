@@ -26,7 +26,8 @@
                         aria-valuenow="70"
                         aria-valuemin="0"
                         aria-valuemax="100"
-                    ><!--BARRA DE PROGRESSO DE TAREFAS REALIZADAS-->
+                    >
+                        <!--BARRA DE PROGRESSO DE TAREFAS REALIZADAS-->
                         25%
                     </div>
                 </div>
@@ -40,11 +41,12 @@
                         aria-label="Recipient's username"
                         aria-describedby="button-addon2"
                     /><!--CRIA O FORMULARIO PARA O USUARIO ESCREVER A TAREFA-->
-                    <button 
+                    <button
                         class="btn btn-outline-secondary"
                         type="button"
                         id="buttonadd"
-                    > <!--CRIA O BOTAO DE ADICIONAR TAREFA-->
+                    >
+                        <!--CRIA O BOTAO DE ADICIONAR TAREFA-->
                         Add
                     </button>
                     <div class="dropdown">
@@ -76,30 +78,11 @@
                             </li>
                         </ul>
                     </div>
-                </div><!--MENU DE NAVEGAÇÃO ENTRE TAREFAS JA CONCLUIDAS-->
-
-                <div
-                    id="currentlist"
-                    class="toast align-items-center text-white bg-primary border-0 d-flex flex-wrap p-4 mt-4 btn"
-                    role="checkbox"
-                    aria-live="assertive"
-                    aria-atomic="true"
-                    onclick="readytask()"
-                >
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            Hello, world! This is a toast message.
-                        </div>
-                        <button
-                            type="button"
-                            class="btn-close btn-close-white me-2 m-auto"
-                            data-bs-dismiss="toast"
-                            aria-label="Close"
-                        ></button>
-                    </div>
                 </div>
+                <!--MENU DE NAVEGAÇÃO ENTRE TAREFAS JA CONCLUIDAS-->
+                <div id="tarefas"></div>
             </div>
         </main>
     </body>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </html>
