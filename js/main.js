@@ -70,24 +70,32 @@ function concluirTarefa(id) {
 }
 
 function barraProgresso() {
-    const porcentagem = Math.round(
-        (tarefas.filter((t) => t.done).length / tarefas.length) * 100
-    );
-
     const elemento = document.getElementById("barra-progresso");
-    elemento.style.width = `${porcentagem}%`;
-    elemento.innerHTML = `${porcentagem}%`;
 
-    if (porcentagem <= 30) {
-        elemento.classList.replace(classeAtual, "bg-danger");
-        classeAtual = "bg-danger";
-    } else if (porcentagem > 30 && porcentagem <= 70) {
-        elemento.classList.replace(classeAtual, "bg-warning");
-        classeAtual = "bg-warning";
-    } else {
-        elemento.classList.replace(classeAtual, "bg-success");
-        classeAtual = "bg-success";
+    if (tarefas.length > 0) {
+
+         const porcentagem = Math.round(
+             (tarefas.filter((t) => t.done).length / tarefas.length) * 100
+         );
+
+         elemento.innerHTML = `${porcentagem}%`;
+         elemento.style.width = `${porcentagem}%`;
+
+         if (porcentagem <= 30) {
+             elemento.classList.replace(classeAtual, "bg-danger");
+             classeAtual = "bg-danger";
+         } else if (porcentagem > 30 && porcentagem <= 70) {
+             elemento.classList.replace(classeAtual, "bg-warning");
+             classeAtual = "bg-warning";
+         } else {
+             elemento.classList.replace(classeAtual, "bg-success");
+             classeAtual = "bg-success";
+         }
+    }else{
+        elemento.innerHTML = '';
+        elemento.style.width = '0';
     }
+   
 }
 
 carregarTarefas();
