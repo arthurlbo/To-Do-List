@@ -95,8 +95,16 @@ function barraProgresso() {
         elemento.innerHTML = '';
         elemento.style.width = '0';
     }
-   
 }
+
+    document.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            var btn = document.querySelector("#buttonadd");
+
+            btn.click(cadastrarTarefa());
+        }
+    });
+   
 
 carregarTarefas();
 renderizarTarefas();
