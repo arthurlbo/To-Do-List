@@ -1,6 +1,7 @@
 import botao from "./components/botao.js";
 import _, { forEach } from "lodash";
 let tarefas = [];
+let classeAtual = "bg-danger";
 
 function carregarTarefas() {
     if (localStorage.getItem("tasks")) {
@@ -77,10 +78,16 @@ function barraProgresso() {
     elemento.style.width = `${porcentagem}%`;
     elemento.innerHTML = `${porcentagem}%`;
 
-    if (porcentagem < 30) {
-         
+    if (porcentagem <= 30) {
+        elemento.classList.replace(classeAtual, "bg-danger");
+        classeAtual = "bg-danger";
+    } else if (porcentagem > 30 && porcentagem <= 70) {
+        elemento.classList.replace(classeAtual, "bg-warning");
+        classeAtual = "bg-warning";
+    } else {
+        elemento.classList.replace(classeAtual, "bg-success");
+        classeAtual = "bg-success";
     }
-
 }
 
 carregarTarefas();
