@@ -44,6 +44,7 @@ function cadastrarTarefa() {
         });
         salvarTarefas();
         renderizarTarefas();
+        barraProgresso();
     }
 }
 
@@ -60,23 +61,26 @@ function concluirTarefa(id) {
     for (let i = 0; i < tarefas.length; i++) {
         if (tarefas[i].id == id) {
             tarefas[i].done = !tarefas[i].done;
-    
         }
     }
-   let checar = tarefas.done
     salvarTarefas();
     renderizarTarefas();
+    barraProgresso();
 }
 
-function checarProgresso(tarefas){
-    for (let i = 0; i < tarefas.length; i++) {
-    return tarefas[i] = true;
+function barraProgresso() {
+    const porcentagem = Math.round(
+        (tarefas.filter((t) => t.done).length / tarefas.length) * 100
+    );
+
+    const elemento = document.getElementById("barra-progresso");
+    elemento.style.width = `${porcentagem}%`;
+    elemento.innerHTML = `${porcentagem}%`;
+
+    if (porcentagem < 30) {
+         
     }
-}
 
-function barraProgresso(){
-    let meuProgresso= tarefas.filter(checarProgresso);
-    console.log('tarefas completas', meuProgresso);
 }
 
 carregarTarefas();
@@ -86,3 +90,4 @@ barraProgresso();
 document.cadastrarTarefa = cadastrarTarefa;
 document.deletarTarefa = deletarTarefa;
 document.concluirTarefa = concluirTarefa;
+document.barraProgresso = barraProgresso;
