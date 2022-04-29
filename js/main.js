@@ -1,5 +1,6 @@
 import botao from "./components/botao.js";
 import _, { forEach } from "lodash";
+import uu from"./util/gerarid"
 let tarefas = [];
 let classeAtual = "bg-danger";
 
@@ -10,15 +11,7 @@ function carregarTarefas() {
         tarefas = [];
     }
 }
-//https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
-function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-        (
-            c ^
-            (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-        ).toString(16)
-    );
-}
+
 
 function salvarTarefas() {
     localStorage.setItem("tasks", JSON.stringify(tarefas));
@@ -32,14 +25,14 @@ function deletarTarefa(id) {
     renderizarTarefas();
 }
 
-function cadastrarTarefa() {
-    const input = document.querySelector("#gettask");
-
+function cadastrarTarefa() {                             
+    const input = document.querySelector("#gettask");   
+//variavel input armazena o que foi digitado no formulario 
     if (input.value !== "") {
-        const texto = input.value;
-        input.value = "";
+        const texto = input.value; 
+        input.value = ""; 
         tarefas.push({
-            id: uuidv4(),
+            id: uu(),
             txt: texto,
             done: false,
         });
@@ -99,9 +92,9 @@ function barraProgresso() {
 
     document.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
-            var btn = document.querySelector("#buttonadd");
+        
 
-            btn.click(cadastrarTarefa());
+            cadastrarTarefa();
         }
     });
    
