@@ -5,7 +5,8 @@ export default function barraProgresso() {
 
     if (Data.tarefas.length > 0) {
         const porcentagem = Math.round(
-            (Data.tarefas.filter((t) => t.done).length / Data.tarefas.length) * 100
+            (Data.tarefas.filter((t) => t.done).length / Data.tarefas.length) *
+                100
         );
 
         elemento.innerHTML = `${porcentagem}%`;

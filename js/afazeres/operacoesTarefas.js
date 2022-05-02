@@ -1,11 +1,11 @@
 import { Data } from "../util/data.js";
 import uu from "../util/gerarid";
-import salvarTarefas from "./salvar.js";
-import renderizarTarefas from "./renderizar.js"; 
-import barraProgresso from "../components/barra.js";
 import _, { forEach } from "lodash";
- 
-export default function cadastrarTarefas() {
+import botao from "../components/botao";
+import barraProgresso from "../components/barra.js";
+import salvarTarefas from "./salvar";
+
+export function cadastrarTarefas() {
     const input = document.querySelector("#gettask");
 
     if (input.value !== "") {
@@ -20,6 +20,14 @@ export default function cadastrarTarefas() {
         renderizarTarefas();
         barraProgresso();
     }
+}
+
+export function renderizarTarefas() {
+    let html = "";
+    Data.tarefas.forEach((tarefa) => {
+        html += botao(tarefa);
+    });
+    document.getElementById("tarefas").innerHTML = html;
 }
 
 export function concluirTarefas(id) {
