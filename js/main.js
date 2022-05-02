@@ -103,3 +103,4 @@ document.cadastrarTarefas = cadastrarTarefas;
 document.deletarTarefas = deletarTarefas;
 document.concluirTarefas = concluirTarefas;
 document.barraProgresso = barraProgresso;
+
