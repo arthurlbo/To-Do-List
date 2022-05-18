@@ -3,6 +3,6 @@
 tecnologias:
 
 * HTML
-* Sass
+* SCSS
 * JavaScript
 * Bootstrap
